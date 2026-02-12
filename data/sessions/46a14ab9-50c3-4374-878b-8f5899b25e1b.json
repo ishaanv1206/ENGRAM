@@ -1,0 +1,77 @@
+{
+  "session_id": "46a14ab9-50c3-4374-878b-8f5899b25e1b",
+  "turn_count": 6,
+  "conversation_history": [
+    {
+      "role": "user",
+      "content": "hi",
+      "timestamp": "2026-02-10T22:50:11.612245"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello. How can I assist you today?",
+      "timestamp": "2026-02-10T22:50:11.613750"
+    },
+    {
+      "role": "user",
+      "content": "My name is steve harrington",
+      "timestamp": "2026-02-10T22:51:34.305776"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello Steve. What's on your mind? I'm here to help.",
+      "timestamp": "2026-02-10T22:51:34.305776"
+    },
+    {
+      "role": "user",
+      "content": "tomorr\u0001i had an exam today",
+      "timestamp": "2026-02-10T22:53:17.020084"
+    },
+    {
+      "role": "assistant",
+      "content": "How did the exam go, Steve? Were you prepared?",
+      "timestamp": "2026-02-10T22:53:17.020084"
+    },
+    {
+      "role": "user",
+      "content": "nancy is good",
+      "timestamp": "2026-02-10T22:54:39.540799"
+    },
+    {
+      "role": "assistant",
+      "content": "It sounds like Nancy is a supportive presence in your life. Is there anything specific she's been helping you with lately?",
+      "timestamp": "2026-02-10T22:54:39.540799"
+    },
+    {
+      "role": "user",
+      "content": "broo i have to definetly attend tommorrows meeting",
+      "timestamp": "2026-02-10T23:01:54.338052"
+    },
+    {
+      "role": "assistant",
+      "content": "Sounds like you've got a priority to attend to tomorrow's meeting. Can you tell me a bit more about what the meeting is about?",
+      "timestamp": "2026-02-10T23:01:54.338052"
+    },
+    {
+      "role": "user",
+      "content": "i told you someone is good, who was it?",
+      "timestamp": "2026-02-10T23:06:29.686622"
+    },
+    {
+      "role": "assistant",
+      "content": "You mentioned Nancy is good.",
+      "timestamp": "2026-02-10T23:06:29.686622"
+    }
+  ],
+  "active_entities": [
+    "My"
+  ],
+  "recent_topics": [
+    "discard",
+    "pinned",
+    "episodic",
+    "relational",
+    "critical"
+  ],
+  "saved_at": "2026-02-10T23:06:33.884430"
+}

@@ -1,0 +1,57 @@
+{
+  "session_id": "e4cecaea-c813-4e30-bc71-af1c29437fc8",
+  "turn_count": 4,
+  "conversation_history": [
+    {
+      "role": "user",
+      "content": "my name is king kong",
+      "timestamp": "2026-02-07T23:35:04.493970"
+    },
+    {
+      "role": "assistant",
+      "content": "Welcome, King Kong. Is there something I can assist you with, or would you like to chat?",
+      "timestamp": "2026-02-07T23:35:04.493970"
+    },
+    {
+      "role": "user",
+      "content": "Your name is Jarvis",
+      "timestamp": "2026-02-07T23:35:25.017645"
+    },
+    {
+      "role": "assistant",
+      "content": "That's not correct, King Kong. I don't have a personal name. I'm here to provide information and help with any questions or concerns you may have.",
+      "timestamp": "2026-02-07T23:35:25.017645"
+    },
+    {
+      "role": "user",
+      "content": "I live in Paris",
+      "timestamp": "2026-02-07T23:35:46.417453"
+    },
+    {
+      "role": "assistant",
+      "content": "Paris is a beautiful city, King Kong. What brings you to that part of the world? Are you enjoying the sights and culture?",
+      "timestamp": "2026-02-07T23:35:46.417453"
+    },
+    {
+      "role": "user",
+      "content": "My wife is Sarah",
+      "timestamp": "2026-02-07T23:36:54.804079"
+    },
+    {
+      "role": "assistant",
+      "content": "It can be challenging to balance personal and public life, King Kong. Are you and Sarah enjoying time together in Paris?",
+      "timestamp": "2026-02-07T23:36:54.804079"
+    }
+  ],
+  "active_entities": [
+    "Your",
+    "Jarvis",
+    "Paris",
+    "My",
+    "Sarah"
+  ],
+  "recent_topics": [
+    "pinned"
+  ],
+  "saved_at": "2026-02-07T23:36:55.200121"
+}

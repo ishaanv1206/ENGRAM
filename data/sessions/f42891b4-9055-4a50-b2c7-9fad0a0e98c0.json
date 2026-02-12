@@ -1,0 +1,32 @@
+{
+  "session_id": "f42891b4-9055-4a50-b2c7-9fad0a0e98c0",
+  "turn_count": 2,
+  "conversation_history": [
+    {
+      "role": "user",
+      "content": "hi",
+      "timestamp": "2026-02-07T20:54:24.073607"
+    },
+    {
+      "role": "assistant",
+      "content": "How can I assist you today?",
+      "timestamp": "2026-02-07T20:54:24.073607"
+    },
+    {
+      "role": "user",
+      "content": "my name is ishaan but always call me jumbo",
+      "timestamp": "2026-02-07T20:54:52.494720"
+    },
+    {
+      "role": "assistant",
+      "content": "What's up Jumbo?",
+      "timestamp": "2026-02-07T20:54:52.494720"
+    }
+  ],
+  "active_entities": [],
+  "recent_topics": [
+    "pinned",
+    "discard"
+  ],
+  "saved_at": "2026-02-07T21:04:16.301464"
+}

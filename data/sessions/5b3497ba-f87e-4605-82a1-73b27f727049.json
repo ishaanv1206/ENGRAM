@@ -1,0 +1,43 @@
+{
+  "session_id": "5b3497ba-f87e-4605-82a1-73b27f727049",
+  "turn_count": 3,
+  "conversation_history": [
+    {
+      "role": "user",
+      "content": "hi",
+      "timestamp": "2026-02-09T12:55:57.799085"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello. How can I assist you today?",
+      "timestamp": "2026-02-09T12:55:57.799085"
+    },
+    {
+      "role": "user",
+      "content": "my name is KING KONG okay?",
+      "timestamp": "2026-02-09T12:56:38.078794"
+    },
+    {
+      "role": "assistant",
+      "content": "Nice to meet you, King Kong. Is there something I can help you with or would you like to chat?",
+      "timestamp": "2026-02-09T12:56:38.078794"
+    },
+    {
+      "role": "user",
+      "content": "Always remember my name is xoxo",
+      "timestamp": "2026-02-09T12:57:23.954792"
+    },
+    {
+      "role": "assistant",
+      "content": "I'll keep that in mind, King Kong. Just to confirm, you'd like me to address you as \"King Kong\" from now on, right?",
+      "timestamp": "2026-02-09T12:57:23.954792"
+    }
+  ],
+  "active_entities": [
+    "Always"
+  ],
+  "recent_topics": [
+    "discard"
+  ],
+  "saved_at": "2026-02-09T12:57:23.955800"
+}

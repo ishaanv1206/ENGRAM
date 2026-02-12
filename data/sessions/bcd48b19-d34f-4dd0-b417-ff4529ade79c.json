@@ -1,0 +1,43 @@
+{
+  "session_id": "bcd48b19-d34f-4dd0-b417-ff4529ade79c",
+  "turn_count": 3,
+  "conversation_history": [
+    {
+      "role": "user",
+      "content": "hi",
+      "timestamp": "2026-02-07T23:52:12.669438"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello. How can I assist you today?",
+      "timestamp": "2026-02-07T23:52:12.669438"
+    },
+    {
+      "role": "user",
+      "content": "I love Python",
+      "timestamp": "2026-02-07T23:52:28.685085"
+    },
+    {
+      "role": "assistant",
+      "content": "Python is a popular and versatile language. What area of Python are you interested in, such as web development, data science, or machine learning?",
+      "timestamp": "2026-02-07T23:52:28.685085"
+    },
+    {
+      "role": "user",
+      "content": "I code in python",
+      "timestamp": "2026-02-08T00:01:14.229173"
+    },
+    {
+      "role": "assistant",
+      "content": "That's great. Python has a vast number of libraries and frameworks to help with various tasks. What kind of projects have you been working on recently?",
+      "timestamp": "2026-02-08T00:01:14.229173"
+    }
+  ],
+  "active_entities": [
+    "Python"
+  ],
+  "recent_topics": [
+    "pinned"
+  ],
+  "saved_at": "2026-02-08T00:01:16.847457"
+}

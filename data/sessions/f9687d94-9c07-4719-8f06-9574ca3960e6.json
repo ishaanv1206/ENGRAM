@@ -1,0 +1,65 @@
+{
+  "session_id": "f9687d94-9c07-4719-8f06-9574ca3960e6",
+  "turn_count": 5,
+  "conversation_history": [
+    {
+      "role": "user",
+      "content": "Remind me to call mom",
+      "timestamp": "2026-02-09T15:37:45.057823"
+    },
+    {
+      "role": "assistant",
+      "content": "I can set a reminder for you. Would you like me to send a notification to your phone or calendar at a specific time?",
+      "timestamp": "2026-02-09T15:37:45.059327"
+    },
+    {
+      "role": "user",
+      "content": "my name is john",
+      "timestamp": "2026-02-09T15:39:10.385659"
+    },
+    {
+      "role": "assistant",
+      "content": "Hi John, I've noted that you'd like to be reminded to call your mom. Would you like me to suggest a time or just keep it in your system for now?",
+      "timestamp": "2026-02-09T15:39:10.385659"
+    },
+    {
+      "role": "user",
+      "content": "I had a terrible headache this morning",
+      "timestamp": "2026-02-09T15:40:14.915094"
+    },
+    {
+      "role": "assistant",
+      "content": "Sorry to hear that, John. Hopefully, you're feeling better now. Would you like some suggestions for relaxation techniques or over-the-counter pain relief options to help with headaches in the future?",
+      "timestamp": "2026-02-09T15:40:14.915094"
+    },
+    {
+      "role": "user",
+      "content": "I hate brocolli",
+      "timestamp": "2026-02-09T15:41:30.895360"
+    },
+    {
+      "role": "assistant",
+      "content": "Broccoli can be a bit of a turn-off for some people. Would you like some recipe suggestions for dishes that feature other vegetables instead?",
+      "timestamp": "2026-02-09T15:41:30.895360"
+    },
+    {
+      "role": "user",
+      "content": "I have a dentist appointment next Tuesday at 10 AM",
+      "timestamp": "2026-02-09T15:44:37.271446"
+    },
+    {
+      "role": "assistant",
+      "content": "John, I've got that reminder for you. Don't forget about your dentist appointment next Tuesday at 10 AM. Would you like me to send you a notification the day before or at a specific time leading up to it?",
+      "timestamp": "2026-02-09T15:44:37.271446"
+    }
+  ],
+  "active_entities": [
+    "Remind",
+    "Tuesday"
+  ],
+  "recent_topics": [
+    "discard",
+    "pinned"
+  ],
+  "saved_at": "2026-02-09T15:44:37.275457"
+}

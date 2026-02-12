@@ -1,0 +1,51 @@
+{
+  "session_id": "5d8f3094-293c-46da-b84e-aff60c5e6b8f",
+  "turn_count": 4,
+  "conversation_history": [
+    {
+      "role": "user",
+      "content": "hi",
+      "timestamp": "2026-02-09T11:27:18.605192"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello. How can I assist you today?",
+      "timestamp": "2026-02-09T11:27:18.605192"
+    },
+    {
+      "role": "user",
+      "content": "my name is humpty dumpty",
+      "timestamp": "2026-02-09T11:27:48.980140"
+    },
+    {
+      "role": "assistant",
+      "content": "Nice to meet you, Humpty Dumpty. Is there something on your mind that you'd like to talk about, or is it just a coincidence with the famous egg character?",
+      "timestamp": "2026-02-09T11:27:48.980140"
+    },
+    {
+      "role": "user",
+      "content": "my name is humpy always remember that",
+      "timestamp": "2026-02-09T11:28:17.609023"
+    },
+    {
+      "role": "assistant",
+      "content": "I'll make sure to remember that, Humpy. I'll keep your name in mind for our conversation. Is there something specific you'd like to chat about, or would you like me to suggest some topics?",
+      "timestamp": "2026-02-09T11:28:17.609023"
+    },
+    {
+      "role": "user",
+      "content": "set an alarm for 11am",
+      "timestamp": "2026-02-09T11:28:42.171915"
+    },
+    {
+      "role": "assistant",
+      "content": "I've taken note that you'd like to be reminded about something at 11am. I'll do my best to ensure you receive a notification at that time. Would you like the reminder to be sent to a specific device or just a notification within our conversation?",
+      "timestamp": "2026-02-09T11:28:42.171915"
+    }
+  ],
+  "active_entities": [],
+  "recent_topics": [
+    "discard"
+  ],
+  "saved_at": "2026-02-09T11:28:42.173921"
+}

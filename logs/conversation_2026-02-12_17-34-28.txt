@@ -1,0 +1,5 @@
+[2026-02-12 17:35:07] USER: hi
+[2026-02-12 17:35:07] ASSISTANT: Hello. How can I assist you today?
+[MEMORY] Category: discard | Confidence: 0.90 | Content: hi
+[DECISION] Intent: no_memory | Graph Queried: False | Total Memories: 0
+----------------------------------------

@@ -1,0 +1,43 @@
+{
+  "session_id": "8576427f-b9bb-418a-bdae-909e7dc20099",
+  "turn_count": 3,
+  "conversation_history": [
+    {
+      "role": "user",
+      "content": "hi",
+      "timestamp": "2026-02-08T01:02:55.430611"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello. How can I assist you today?",
+      "timestamp": "2026-02-08T01:02:55.430611"
+    },
+    {
+      "role": "user",
+      "content": "The bakery sells delicious cakes",
+      "timestamp": "2026-02-08T01:05:27.269747"
+    },
+    {
+      "role": "assistant",
+      "content": "It sounds like you're thinking about getting something from a bakery. What kind of cake are you in the mood for?",
+      "timestamp": "2026-02-08T01:05:27.269747"
+    },
+    {
+      "role": "user",
+      "content": "The store sells shoes",
+      "timestamp": "2026-02-08T01:06:14.692679"
+    },
+    {
+      "role": "assistant",
+      "content": "It seems like you're confusing it with a different store. The previous mention was about a bakery, not a shoe store. If you're looking for a specific type of shoe, I can try to help you find information on that.",
+      "timestamp": "2026-02-08T01:06:14.692679"
+    }
+  ],
+  "active_entities": [
+    "The"
+  ],
+  "recent_topics": [
+    "pinned"
+  ],
+  "saved_at": "2026-02-08T01:06:17.295124"
+}

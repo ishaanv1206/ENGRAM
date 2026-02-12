@@ -1,0 +1,33 @@
+{
+  "session_id": "5cead155-283f-4ada-97d2-3d056dfea1e2",
+  "turn_count": 2,
+  "conversation_history": [
+    {
+      "role": "user",
+      "content": "The sky is blue",
+      "timestamp": "2026-02-08T01:33:56.623473"
+    },
+    {
+      "role": "assistant",
+      "content": "The color of the sky can vary depending on the time of day and atmospheric conditions. Typically, during a clear day, the sky appears blue due to a phenomenon called Rayleigh scattering, where shorter wavelengths of light are scattered more than others.",
+      "timestamp": "2026-02-08T01:33:56.623473"
+    },
+    {
+      "role": "user",
+      "content": "The sky is blue",
+      "timestamp": "2026-02-08T01:34:15.437885"
+    },
+    {
+      "role": "assistant",
+      "content": "That's correct. The color of the sky can indeed appear blue, especially during a clear day when there's little to no pollution or atmospheric distortion.",
+      "timestamp": "2026-02-08T01:34:15.437885"
+    }
+  ],
+  "active_entities": [
+    "The"
+  ],
+  "recent_topics": [
+    "pinned"
+  ],
+  "saved_at": "2026-02-08T01:34:15.442890"
+}

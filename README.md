@@ -4,22 +4,34 @@
 
 ---
 
-## 1. Running the Demo
+## 🎬 1. Running the Demo
 
-To see the ENGRAM in action, run the demo script:
+### Quick Demo (No Models Required)
+
+Try Engram instantly — no downloads needed:
 
 ```bash
-# Windows (PowerShell)
-python -m src.demo_script
-
-# Windows (Bash/Git Bash)
-./run_demo.sh
+python -m src.demo_offline
 ```
 
-This script simulates a conversation where the user introduces themselves, chats about the weather (which gets discarding), and asks for recall. It demonstrates:
+This runs a **pre-recorded simulation** of the Engram pipeline, showing how the system classifies, stores, retrieves, and responds — with real outputs captured from a live session.
+
+### Full Demo (Requires Models)
+
+To run the **real pipeline** with live LLM inference:
+
+```bash
+# 1. Download models (see Tech Stack section for links)
+# 2. Configure paths in .env
+# 3. Run:
+python -m src.demo_script
+```
+
+**Both demos showcase:**
 1.  **Fact Extraction:** Storing "I work as a Quantum Physicist."
 2.  **Noise Filtering:** Discarding "The weather is nice today."
-3.  **Contextual Recall:** Answering "Who am I?" using stored memory.
+3.  **Relational Memory:** Linking entities ("John is my boss").
+4.  **Contextual Recall:** Answering "Who am I?" using stored memory.
 
 ## 2. Main Components
 
@@ -108,6 +120,37 @@ Conversations are logged to `logs/conversation_<timestamp>.txt` with rich debug 
 
 
 ![Accuracy Graph](results/accuracy_graph.png)
+
 ---
 
+## 🔧 Model Setup
 
+Download the following models and place them in `data/models/`:
+
+### 1. Classifier — Dolphin 3.0 Llama 3.1 8B (Q4_K_S)
+- **File:** `Dolphin3.0-Llama3.1-8B-Q4_K_S.gguf`
+- **Source:** [dphn/Dolphin3.0-Llama3.1-8B-GGUF](https://huggingface.co/dphn/Dolphin3.0-Llama3.1-8B-GGUF)
+- **Download:** [Direct Link](https://huggingface.co/dphn/Dolphin3.0-Llama3.1-8B-GGUF/blob/main/Dolphin3.0-Llama3.1-8B-Q4_K_S.gguf)
+- **Role:** Memory Analyzer / Gatekeeper (classifies inputs into 6 memory categories)
+
+### 2. Chat LLM — Llama 3.2 3B Instruct (Q6_K_L)
+- **File:** `Llama-3.2-3B-Instruct-uncensored-Q6_K_L.gguf`
+- **Source:** [bartowski/Llama-3.2-3B-Instruct-uncensored-GGUF](https://huggingface.co/bartowski/Llama-3.2-3B-Instruct-uncensored-GGUF)
+- **Download:** [Direct Link](https://huggingface.co/bartowski/Llama-3.2-3B-Instruct-uncensored-GGUF/blob/main/Llama-3.2-3B-Instruct-uncensored-Q6_K_L.gguf)
+- **Role:** Generates natural language responses using retrieved context
+
+### 3. Embedding Model — mxbai-embed-large-v1
+- **Source:** [mixedbread-ai/mxbai-embed-large-v1](https://huggingface.co/mixedbread-ai/mxbai-embed-large-v1)
+- **Download:** [HuggingFace Page](https://huggingface.co/mixedbread-ai/mxbai-embed-large-v1)
+- **Role:** Creates vector embeddings for semantic search in the knowledge graph
+
+### Directory Structure:
+```
+data/
+└── models/
+    ├── Dolphin3.0-Llama3.1-8B-Q4_K_S.gguf
+    ├── Llama-3.2-3B-Instruct-uncensored-Q6_K_L.gguf
+    └── mxbai-embed-large-v1_fp32.gguf
+```
+
+> **Note:** Update the model paths in your `.env` file after downloading.

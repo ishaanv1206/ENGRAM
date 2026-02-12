@@ -1,0 +1,21 @@
+{
+  "session_id": "d94474aa-8c33-45fe-b95a-5218ed60ef88",
+  "turn_count": 1,
+  "conversation_history": [
+    {
+      "role": "user",
+      "content": "Hello!",
+      "timestamp": "2026-02-07T20:19:08.303767"
+    },
+    {
+      "role": "assistant",
+      "content": "How can I assist you today?",
+      "timestamp": "2026-02-07T20:19:08.303767"
+    }
+  ],
+  "active_entities": [],
+  "recent_topics": [
+    "discard"
+  ],
+  "saved_at": "2026-02-07T20:19:08.303767"
+}

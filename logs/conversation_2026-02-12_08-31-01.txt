@@ -1,0 +1,4 @@
+[2026-02-12 08:31:37] USER: Hi
+[2026-02-12 08:31:37] ASSISTANT: How can I assist you today?
+[MEMORY] Category: discard | Confidence: 0.95 | Content: Hi
+----------------------------------------

@@ -1,0 +1,21 @@
+{
+  "session_id": "e6b6db7c-7681-4613-bbde-6ca789389102",
+  "turn_count": 1,
+  "conversation_history": [
+    {
+      "role": "user",
+      "content": "I like the brother bear very much",
+      "timestamp": "2026-02-07T23:10:07.903184"
+    },
+    {
+      "role": "assistant",
+      "content": "It's a beautifully animated film with a powerful message about forgiveness, redemption, and the importance of understanding and respecting nature. The character of Kenai, in particular, undergoes a significant transformation throughout the story. What is it about Brother Bear that resonates with you?",
+      "timestamp": "2026-02-07T23:10:07.903184"
+    }
+  ],
+  "active_entities": [],
+  "recent_topics": [
+    "pinned"
+  ],
+  "saved_at": "2026-02-07T23:10:12.456190"
+}

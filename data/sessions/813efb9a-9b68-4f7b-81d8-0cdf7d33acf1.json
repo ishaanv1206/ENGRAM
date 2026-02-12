@@ -1,0 +1,31 @@
+{
+  "session_id": "813efb9a-9b68-4f7b-81d8-0cdf7d33acf1",
+  "turn_count": 2,
+  "conversation_history": [
+    {
+      "role": "user",
+      "content": "hi",
+      "timestamp": "2026-02-09T11:24:14.250955"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello. How can I assist you today?",
+      "timestamp": "2026-02-09T11:24:14.250955"
+    },
+    {
+      "role": "user",
+      "content": "my name is kratos",
+      "timestamp": "2026-02-09T11:24:42.074494"
+    },
+    {
+      "role": "assistant",
+      "content": "Kratos. What's on your mind? Need help with something or just want to chat?",
+      "timestamp": "2026-02-09T11:24:42.074494"
+    }
+  ],
+  "active_entities": [],
+  "recent_topics": [
+    "discard"
+  ],
+  "saved_at": "2026-02-09T11:24:42.076496"
+}

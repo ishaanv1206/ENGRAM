@@ -1,0 +1,35 @@
+{
+  "session_id": "d15deacd-2b6c-411e-bb61-1684630095d7",
+  "turn_count": 2,
+  "conversation_history": [
+    {
+      "role": "user",
+      "content": "Hi, I'm Alex. I work as a Quantum Physicist.",
+      "timestamp": "2026-02-12T11:28:57.853206"
+    },
+    {
+      "role": "assistant",
+      "content": "Hi Alex, nice to meet you. Quantum Physics is a fascinating field. What specific areas of research are you currently exploring?",
+      "timestamp": "2026-02-12T11:28:57.853206"
+    },
+    {
+      "role": "user",
+      "content": "The weather is nice today.",
+      "timestamp": "2026-02-12T11:29:40.079094"
+    },
+    {
+      "role": "assistant",
+      "content": "It's always a good day when the weather is cooperating. Do you find that your work in Quantum Physics often requires you to think about the theoretical implications of complex systems, or do you get to spend more time outdoors when you're not in the lab?",
+      "timestamp": "2026-02-12T11:29:40.079094"
+    }
+  ],
+  "active_entities": [
+    "Alex",
+    "The"
+  ],
+  "recent_topics": [
+    "relational",
+    "discard"
+  ],
+  "saved_at": "2026-02-12T11:29:40.088264"
+}

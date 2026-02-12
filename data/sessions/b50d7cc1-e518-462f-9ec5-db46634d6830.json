@@ -1,0 +1,21 @@
+{
+  "session_id": "b50d7cc1-e518-462f-9ec5-db46634d6830",
+  "turn_count": 1,
+  "conversation_history": [
+    {
+      "role": "user",
+      "content": "bruno is jojo's dog",
+      "timestamp": "2026-02-11T00:28:38.520900"
+    },
+    {
+      "role": "assistant",
+      "content": "I apologize, but I encountered an error generating a response. Please try again.",
+      "timestamp": "2026-02-11T00:28:38.520900"
+    }
+  ],
+  "active_entities": [],
+  "recent_topics": [
+    "relational"
+  ],
+  "saved_at": "2026-02-11T00:28:39.997033"
+}

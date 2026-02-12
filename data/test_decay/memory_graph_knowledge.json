@@ -1,0 +1,21 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "Memory",
+      "category": "critical",
+      "content": "Critical Memory",
+      "confidence": 1.0,
+      "created_at": "2026-02-11T15:47:59.216425",
+      "last_accessed": "2026-02-11T15:47:59.216425",
+      "access_count": 0,
+      "decay_rate": 0.0,
+      "structured_data": "{\"content\": \"Critical Memory\"}",
+      "embedding": null,
+      "id": "dc336de3-8d17-47a2-a513-74c5297c72b0"
+    }
+  ],
+  "edges": []
+}

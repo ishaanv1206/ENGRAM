@@ -1,0 +1,58 @@
+{
+  "session_id": "6c2eed69-4bfc-4c75-8b26-29395e8fae06",
+  "turn_count": 4,
+  "conversation_history": [
+    {
+      "role": "user",
+      "content": "HI",
+      "timestamp": "2026-02-07T21:04:41.766468"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello! How can I assist you today?",
+      "timestamp": "2026-02-07T21:04:41.766468"
+    },
+    {
+      "role": "user",
+      "content": "My favourite programming language is Rust. Remember this.",
+      "timestamp": "2026-02-07T21:05:14.619771"
+    },
+    {
+      "role": "assistant",
+      "content": "I've taken note that Rust is your preferred programming language. Is there something specific you'd like to discuss or ask about Rust?",
+      "timestamp": "2026-02-07T21:05:14.619771"
+    },
+    {
+      "role": "user",
+      "content": "Tomorrow I have an ML exam.",
+      "timestamp": "2026-02-07T21:05:48.274045"
+    },
+    {
+      "role": "assistant",
+      "content": "Good luck with your ML exam tomorrow. Is there anything specific you'd like to review or go over before then?",
+      "timestamp": "2026-02-07T21:05:48.275161"
+    },
+    {
+      "role": "user",
+      "content": "Actually I changed my favourite language from RUST to Python.",
+      "timestamp": "2026-02-07T21:06:21.201111"
+    },
+    {
+      "role": "assistant",
+      "content": "It looks like you've made a switch to Python. That can be a big change. Are you looking for help or resources to get started with Python, or is there something specific you'd like to know about the language?",
+      "timestamp": "2026-02-07T21:06:21.201111"
+    }
+  ],
+  "active_entities": [
+    "Remember",
+    "Rust",
+    "My",
+    "Tomorrow",
+    "Python",
+    "Actually"
+  ],
+  "recent_topics": [
+    "pinned"
+  ],
+  "saved_at": "2026-02-07T21:16:22.599186"
+}

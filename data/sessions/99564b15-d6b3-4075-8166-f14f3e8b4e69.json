@@ -1,0 +1,31 @@
+{
+  "session_id": "99564b15-d6b3-4075-8166-f14f3e8b4e69",
+  "turn_count": 2,
+  "conversation_history": [
+    {
+      "role": "user",
+      "content": "hi i love the movie incredibles very mu h",
+      "timestamp": "2026-02-07T23:13:58.192943"
+    },
+    {
+      "role": "assistant",
+      "content": "That's great to hear. The Incredibles is a classic animated film with a lot of action, humor, and heart. The Parr family's superpowers and the challenges they face make for an engaging storyline. What's your favorite character in the movie?",
+      "timestamp": "2026-02-07T23:13:58.192943"
+    },
+    {
+      "role": "user",
+      "content": "what is my name",
+      "timestamp": "2026-02-07T23:14:35.883120"
+    },
+    {
+      "role": "assistant",
+      "content": "I don't have any information about your name. Our conversation just started, and I don't retain any personal data about you. If you'd like to share your name, I'm here to chat.",
+      "timestamp": "2026-02-07T23:14:35.883120"
+    }
+  ],
+  "active_entities": [],
+  "recent_topics": [
+    "pinned"
+  ],
+  "saved_at": "2026-02-07T23:14:36.333857"
+}

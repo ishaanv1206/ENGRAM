@@ -1,0 +1,34 @@
+{
+  "session_id": "715ae68e-bee3-4c20-8688-1fa390cfd223",
+  "turn_count": 2,
+  "conversation_history": [
+    {
+      "role": "user",
+      "content": "hi",
+      "timestamp": "2026-02-07T22:47:44.658960"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello! How can I assist you today?",
+      "timestamp": "2026-02-07T22:47:44.658960"
+    },
+    {
+      "role": "user",
+      "content": "My name is Alex",
+      "timestamp": "2026-02-07T22:49:37.569652"
+    },
+    {
+      "role": "assistant",
+      "content": "Nice to meet you, Alex. Is there something on your mind that you'd like to talk about, or is everything okay?",
+      "timestamp": "2026-02-07T22:49:37.569652"
+    }
+  ],
+  "active_entities": [
+    "Alex",
+    "My"
+  ],
+  "recent_topics": [
+    "pinned"
+  ],
+  "saved_at": "2026-02-07T22:52:32.500656"
+}

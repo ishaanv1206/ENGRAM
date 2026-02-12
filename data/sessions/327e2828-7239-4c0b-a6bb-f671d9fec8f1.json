@@ -1,0 +1,41 @@
+{
+  "session_id": "327e2828-7239-4c0b-a6bb-f671d9fec8f1",
+  "turn_count": 3,
+  "conversation_history": [
+    {
+      "role": "user",
+      "content": "my name is superdomo",
+      "timestamp": "2026-02-07T23:26:13.849533"
+    },
+    {
+      "role": "assistant",
+      "content": "It's nice to meet you, Superdomo. Is there something I can help you with or would you like to chat?",
+      "timestamp": "2026-02-07T23:26:13.849533"
+    },
+    {
+      "role": "user",
+      "content": "what is my name?",
+      "timestamp": "2026-02-07T23:26:25.785997"
+    },
+    {
+      "role": "assistant",
+      "content": "Your name is Superdomo.",
+      "timestamp": "2026-02-07T23:26:25.785997"
+    },
+    {
+      "role": "user",
+      "content": "what is my name",
+      "timestamp": "2026-02-07T23:26:45.937051"
+    },
+    {
+      "role": "assistant",
+      "content": "You've mentioned it before. Your name is Superdomo.",
+      "timestamp": "2026-02-07T23:26:45.937051"
+    }
+  ],
+  "active_entities": [],
+  "recent_topics": [
+    "pinned"
+  ],
+  "saved_at": "2026-02-07T23:26:46.690684"
+}

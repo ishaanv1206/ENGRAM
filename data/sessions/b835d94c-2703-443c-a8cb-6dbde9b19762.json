@@ -1,0 +1,41 @@
+{
+  "session_id": "b835d94c-2703-443c-a8cb-6dbde9b19762",
+  "turn_count": 3,
+  "conversation_history": [
+    {
+      "role": "user",
+      "content": "what is my name?",
+      "timestamp": "2026-02-07T21:16:48.775138"
+    },
+    {
+      "role": "assistant",
+      "content": "I don't have that information.",
+      "timestamp": "2026-02-07T21:16:48.775138"
+    },
+    {
+      "role": "user",
+      "content": "my name is jojo remmeber that",
+      "timestamp": "2026-02-07T21:18:41.554190"
+    },
+    {
+      "role": "assistant",
+      "content": "I don't have the ability to remember or keep track of personal information. Each time you interact with me, it's a new conversation.",
+      "timestamp": "2026-02-07T21:18:41.554190"
+    },
+    {
+      "role": "user",
+      "content": "hi bro",
+      "timestamp": "2026-02-07T21:19:36.537854"
+    },
+    {
+      "role": "assistant",
+      "content": "It's nice to chat with you, but I don't have a personal relationship or recall previous conversations. How's your day going?",
+      "timestamp": "2026-02-07T21:19:36.537854"
+    }
+  ],
+  "active_entities": [],
+  "recent_topics": [
+    "pinned"
+  ],
+  "saved_at": "2026-02-07T21:23:35.009596"
+}

@@ -1,0 +1,242 @@
+[
+  {
+    "text": "Found a lost camera",
+    "label": "EPISODIC"
+  },
+  {
+    "text": "My friend David likes cooking",
+    "label": "RELATIONAL"
+  },
+  {
+    "text": "I work as a engineer",
+    "label": "PINNED"
+  },
+  {
+    "text": "Tell Mike I said hi",
+    "label": "RELATIONAL"
+  },
+  {
+    "text": "Ignore this message",
+    "label": "TEMPORARY"
+  },
+  {
+    "text": "Played Fortnite for 3 hours",
+    "label": "EPISODIC"
+  },
+  {
+    "text": "see ya",
+    "label": "DISCARD"
+  },
+  {
+    "text": "Meeting with boss on Sunday",
+    "label": "CRITICAL"
+  },
+  {
+    "text": "Server IP is localhost",
+    "label": "CRITICAL"
+  },
+  {
+    "text": "Let me check API real quick",
+    "label": "TEMPORARY"
+  },
+  {
+    "text": "Testing",
+    "label": "DISCARD"
+  },
+  {
+    "text": "Urgent: pay bills",
+    "label": "CRITICAL"
+  },
+  {
+    "text": "Just testing API",
+    "label": "TEMPORARY"
+  },
+  {
+    "text": "Tom is 12 years old",
+    "label": "RELATIONAL"
+  },
+  {
+    "text": "thanks",
+    "label": "DISCARD"
+  },
+  {
+    "text": "The festival was amazing",
+    "label": "EPISODIC"
+  },
+  {
+    "text": "Hardware specs: Linux server",
+    "label": "PINNED"
+  },
+  {
+    "text": "Always use JavaScript in examples",
+    "label": "PINNED"
+  },
+  {
+    "text": "Rachel is my mother",
+    "label": "RELATIONAL"
+  },
+  {
+    "text": "thanks",
+    "label": "DISCARD"
+  },
+  {
+    "text": "I am Sven",
+    "label": "PINNED"
+  },
+  {
+    "text": "see ya",
+    "label": "DISCARD"
+  },
+  {
+    "text": "Cooked pizza for dinner",
+    "label": "EPISODIC"
+  },
+  {
+    "text": "My friend Kevin likes cooking",
+    "label": "RELATIONAL"
+  },
+  {
+    "text": "Search for ideas",
+    "label": "TEMPORARY"
+  },
+  {
+    "text": "Note that the audit deadline is strict",
+    "label": "CRITICAL"
+  },
+  {
+    "text": "Urgent: submit report",
+    "label": "CRITICAL"
+  },
+  {
+    "text": "Password for wifi is P@ssw0rd",
+    "label": "CRITICAL"
+  },
+  {
+    "text": "I bought a new phone",
+    "label": "EPISODIC"
+  },
+  {
+    "text": "Watched The Matrix and hated it",
+    "label": "EPISODIC"
+  },
+  {
+    "text": "My hobbies include painting",
+    "label": "PINNED"
+  },
+  {
+    "text": "I work as a engineer",
+    "label": "PINNED"
+  },
+  {
+    "text": "Urgent: pay bills",
+    "label": "CRITICAL"
+  },
+  {
+    "text": "Cooked sushi for dinner",
+    "label": "EPISODIC"
+  },
+  {
+    "text": "Lol",
+    "label": "DISCARD"
+  },
+  {
+    "text": "Remember that v2.0 release is priority",
+    "label": "CRITICAL"
+  },
+  {
+    "text": "Rachel is the CEO of Google",
+    "label": "RELATIONAL"
+  },
+  {
+    "text": "My email is contact@domain.net",
+    "label": "PINNED"
+  },
+  {
+    "text": "Rachel is Lisa's father",
+    "label": "RELATIONAL"
+  },
+  {
+    "text": "My husband is Mike",
+    "label": "RELATIONAL"
+  },
+  {
+    "text": "Checking the oven for a moment",
+    "label": "TEMPORARY"
+  },
+  {
+    "text": "Ignore this message",
+    "label": "TEMPORARY"
+  },
+  {
+    "text": "Help me rewrite this sentence: code is broken",
+    "label": "TEMPORARY"
+  },
+  {
+    "text": "My husband is Kevin",
+    "label": "RELATIONAL"
+  },
+  {
+    "text": "What?",
+    "label": "DISCARD"
+  },
+  {
+    "text": "123",
+    "label": "DISCARD"
+  },
+  {
+    "text": "My wife's name is Tom",
+    "label": "RELATIONAL"
+  },
+  {
+    "text": "thx",
+    "label": "DISCARD"
+  },
+  {
+    "text": "I really like the color teal",
+    "label": "PINNED"
+  },
+  {
+    "text": "Just got back from the library",
+    "label": "EPISODIC"
+  },
+  {
+    "text": "Remind me in 5 mins",
+    "label": "TEMPORARY"
+  },
+  {
+    "text": "Wait 5 mins",
+    "label": "TEMPORARY"
+  },
+  {
+    "text": "Deadline for Beta is tonight",
+    "label": "CRITICAL"
+  },
+  {
+    "text": "Visited Alice last weekend",
+    "label": "EPISODIC"
+  },
+  {
+    "text": "I have a dentist appointment on tonight",
+    "label": "CRITICAL"
+  },
+  {
+    "text": "I love photography",
+    "label": "PINNED"
+  },
+  {
+    "text": "Great .",
+    "label": "DISCARD"
+  },
+  {
+    "text": "The weather in the library was terrible",
+    "label": "EPISODIC"
+  },
+  {
+    "text": "Contact me at me@work.org",
+    "label": "PINNED"
+  },
+  {
+    "text": "Let me check server real quick",
+    "label": "TEMPORARY"
+  }
+]

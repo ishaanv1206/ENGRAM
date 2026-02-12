@@ -1,0 +1,24 @@
+{
+  "session_id": "db5af34b-6a5d-4940-85c8-3f2b901e6029",
+  "turn_count": 1,
+  "conversation_history": [
+    {
+      "role": "user",
+      "content": "griffin is casper's new pet",
+      "timestamp": "2026-02-11T00:45:22.021683"
+    },
+    {
+      "role": "assistant",
+      "content": "I apologize, but I encountered an error generating a response. Please try again.",
+      "timestamp": "2026-02-11T00:45:22.021683"
+    }
+  ],
+  "active_entities": [
+    "griffin",
+    "casper"
+  ],
+  "recent_topics": [
+    "relational"
+  ],
+  "saved_at": "2026-02-11T00:45:24.114102"
+}

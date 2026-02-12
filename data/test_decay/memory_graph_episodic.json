@@ -1,0 +1,21 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "Memory",
+      "category": "episodic",
+      "content": "Episodic Memory",
+      "confidence": 1.0,
+      "created_at": "2026-02-11T15:47:59.218944",
+      "last_accessed": "2026-02-11T15:47:59.218944",
+      "access_count": 0,
+      "decay_rate": 0.0,
+      "structured_data": "{\"content\": \"Episodic Memory\"}",
+      "embedding": null,
+      "id": "bf0132f2-9523-4e89-9b8a-51c147d6343e"
+    }
+  ],
+  "edges": []
+}

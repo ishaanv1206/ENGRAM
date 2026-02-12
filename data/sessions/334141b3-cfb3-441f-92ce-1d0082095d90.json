@@ -1,0 +1,74 @@
+{
+  "session_id": "334141b3-cfb3-441f-92ce-1d0082095d90",
+  "turn_count": 6,
+  "conversation_history": [
+    {
+      "role": "user",
+      "content": "hi",
+      "timestamp": "2026-02-07T23:28:18.033433"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello. How can I assist you today?",
+      "timestamp": "2026-02-07T23:28:18.033433"
+    },
+    {
+      "role": "user",
+      "content": "my name is my my name is kraken",
+      "timestamp": "2026-02-07T23:28:37.772701"
+    },
+    {
+      "role": "assistant",
+      "content": "Nice to meet you, Kraken. Is there something I can help you with or would you like to chat?",
+      "timestamp": "2026-02-07T23:28:37.772701"
+    },
+    {
+      "role": "user",
+      "content": "what is your name",
+      "timestamp": "2026-02-07T23:29:19.805911"
+    },
+    {
+      "role": "assistant",
+      "content": "I don't have a personal name. I'm an AI assistant designed to provide information and assist with tasks. I'm here to help answer your questions or help with anything you need.",
+      "timestamp": "2026-02-07T23:29:19.805911"
+    },
+    {
+      "role": "user",
+      "content": "your name is jojo from now on",
+      "timestamp": "2026-02-07T23:29:57.407669"
+    },
+    {
+      "role": "assistant",
+      "content": "From now on, I'll be referring to myself as Jojo. How can I assist you, Kraken?",
+      "timestamp": "2026-02-07T23:29:57.407669"
+    },
+    {
+      "role": "user",
+      "content": "My name is kroko",
+      "timestamp": "2026-02-07T23:30:35.256050"
+    },
+    {
+      "role": "assistant",
+      "content": "So, to recap, we have Kraken and Kroko. I'm still Jojo, your AI assistant. What's on your mind, Kroko?",
+      "timestamp": "2026-02-07T23:30:35.256050"
+    },
+    {
+      "role": "user",
+      "content": "What is my name",
+      "timestamp": "2026-02-07T23:30:47.059753"
+    },
+    {
+      "role": "assistant",
+      "content": "Kroko, your name is Kroko.",
+      "timestamp": "2026-02-07T23:30:47.059753"
+    }
+  ],
+  "active_entities": [
+    "My",
+    "What"
+  ],
+  "recent_topics": [
+    "pinned"
+  ],
+  "saved_at": "2026-02-07T23:30:49.276850"
+}

@@ -1,0 +1,24 @@
+{
+  "session_id": "b1eb063f-6414-4939-b15c-8719d1fda5f0",
+  "turn_count": 1,
+  "conversation_history": [
+    {
+      "role": "user",
+      "content": "My name is Jojo",
+      "timestamp": "2026-02-07T22:58:17.339273"
+    },
+    {
+      "role": "assistant",
+      "content": "Nice to meet you, Jojo. Is there anything I can help you with or would you like to chat?",
+      "timestamp": "2026-02-07T22:58:17.339273"
+    }
+  ],
+  "active_entities": [
+    "Jojo",
+    "My"
+  ],
+  "recent_topics": [
+    "pinned"
+  ],
+  "saved_at": "2026-02-07T22:58:17.755772"
+}

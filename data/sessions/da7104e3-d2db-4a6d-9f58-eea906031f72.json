@@ -1,0 +1,31 @@
+{
+  "session_id": "da7104e3-d2db-4a6d-9f58-eea906031f72",
+  "turn_count": 2,
+  "conversation_history": [
+    {
+      "role": "user",
+      "content": "hi",
+      "timestamp": "2026-02-11T00:50:35.608713"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello. How can I assist you today?",
+      "timestamp": "2026-02-11T00:50:35.608713"
+    },
+    {
+      "role": "user",
+      "content": "yo",
+      "timestamp": "2026-02-11T00:53:34.951356"
+    },
+    {
+      "role": "assistant",
+      "content": "Is everything okay?",
+      "timestamp": "2026-02-11T00:53:34.951356"
+    }
+  ],
+  "active_entities": [],
+  "recent_topics": [
+    "discard"
+  ],
+  "saved_at": "2026-02-11T00:53:36.604464"
+}

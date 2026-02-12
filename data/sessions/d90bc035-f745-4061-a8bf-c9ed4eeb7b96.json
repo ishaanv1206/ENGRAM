@@ -1,0 +1,31 @@
+{
+  "session_id": "d90bc035-f745-4061-a8bf-c9ed4eeb7b96",
+  "turn_count": 2,
+  "conversation_history": [
+    {
+      "role": "user",
+      "content": "I am the superman",
+      "timestamp": "2026-02-07T23:01:04.799075"
+    },
+    {
+      "role": "assistant",
+      "content": "It's not every day I get to interact with a hero of your caliber. As Superman, you're known for your incredible abilities and commitment to truth, justice, and the protection of humanity. What seems to be the situation that requires your attention today?",
+      "timestamp": "2026-02-07T23:01:04.799075"
+    },
+    {
+      "role": "user",
+      "content": "yoyo",
+      "timestamp": "2026-02-07T23:01:22.401176"
+    },
+    {
+      "role": "assistant",
+      "content": "A simple yet intriguing request. It seems like a casual mention, but I'm not aware of any pressing yoyo-related matters that require Superman's intervention. Would you like to elaborate on what's on your mind regarding yoyos?",
+      "timestamp": "2026-02-07T23:01:22.401176"
+    }
+  ],
+  "active_entities": [],
+  "recent_topics": [
+    "pinned"
+  ],
+  "saved_at": "2026-02-07T23:01:24.682649"
+}

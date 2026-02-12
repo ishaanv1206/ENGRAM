@@ -1,0 +1,218 @@
+[
+  {
+    "input": "I learned about AI today",
+    "output": "EPISODIC"
+  },
+  {
+    "input": "I went to Paris yesterday",
+    "output": "EPISODIC"
+  },
+  {
+    "input": "Timer for an hour",
+    "output": "TEMPORARY"
+  },
+  {
+    "input": "Deadline for Beta is Sunday",
+    "output": "CRITICAL"
+  },
+  {
+    "input": "What is 50*5?",
+    "output": "TEMPORARY"
+  },
+  {
+    "input": "Search for winner",
+    "output": "TEMPORARY"
+  },
+  {
+    "input": "Great",
+    "output": "DISCARD"
+  },
+  {
+    "input": "I hate gluten",
+    "output": "PINNED"
+  },
+  {
+    "input": "John is 25 years old",
+    "output": "RELATIONAL"
+  },
+  {
+    "input": "Call me John",
+    "output": "PINNED"
+  },
+  {
+    "input": "Deadline for Alpha is Monday",
+    "output": "CRITICAL"
+  },
+  {
+    "input": "Call me Mike",
+    "output": "PINNED"
+  },
+  {
+    "input": "My birthday is July 4th",
+    "output": "PINNED"
+  },
+  {
+    "input": "What is 2+2?",
+    "output": "TEMPORARY"
+  },
+  {
+    "input": "Key code is 1234",
+    "output": "CRITICAL"
+  },
+  {
+    "input": "Sarah is 50 years old",
+    "output": "RELATIONAL"
+  },
+  {
+    "input": "My boss is John",
+    "output": "RELATIONAL"
+  },
+  {
+    "input": "Translate hello to French",
+    "output": "TEMPORARY"
+  },
+  {
+    "input": "I work as a designer",
+    "output": "PINNED"
+  },
+  {
+    "input": "My cat is named Luna",
+    "output": "RELATIONAL"
+  },
+  {
+    "input": "How are you?",
+    "output": "DISCARD"
+  },
+  {
+    "input": "Key code is 1234",
+    "output": "CRITICAL"
+  },
+  {
+    "input": "I finished reading The Hobbit",
+    "output": "EPISODIC"
+  },
+  {
+    "input": "I ate pizza for lunch",
+    "output": "EPISODIC"
+  },
+  {
+    "input": "Remind me in an hour",
+    "output": "TEMPORARY"
+  },
+  {
+    "input": "Hold this info for a sec: 555-0199",
+    "output": "TEMPORARY"
+  },
+  {
+    "input": "My sister lives in New York",
+    "output": "RELATIONAL"
+  },
+  {
+    "input": "Urgent: submit report",
+    "output": "CRITICAL"
+  },
+  {
+    "input": "Key code is 1234",
+    "output": "CRITICAL"
+  },
+  {
+    "input": "Okay",
+    "output": "DISCARD"
+  },
+  {
+    "input": "Thank you",
+    "output": "DISCARD"
+  },
+  {
+    "input": "Deadline for migration is Friday",
+    "output": "CRITICAL"
+  },
+  {
+    "input": "Meeting with client on Tuesday",
+    "output": "CRITICAL"
+  },
+  {
+    "input": "Saw a cat in the garden",
+    "output": "EPISODIC"
+  },
+  {
+    "input": "Saw a dog in the garden",
+    "output": "EPISODIC"
+  },
+  {
+    "input": "My wife's name is Emily",
+    "output": "RELATIONAL"
+  },
+  {
+    "input": "Got it",
+    "output": "DISCARD"
+  },
+  {
+    "input": "My birthday is December 25th",
+    "output": "PINNED"
+  },
+  {
+    "input": "I ate pizza for lunch",
+    "output": "EPISODIC"
+  },
+  {
+    "input": "Got it",
+    "output": "DISCARD"
+  },
+  {
+    "input": "See ya",
+    "output": "DISCARD"
+  },
+  {
+    "input": "My dog Luna loves bones",
+    "output": "RELATIONAL"
+  },
+  {
+    "input": "Cool",
+    "output": "DISCARD"
+  },
+  {
+    "input": "My birthday is December 25th",
+    "output": "PINNED"
+  },
+  {
+    "input": "My birthday is July 4th",
+    "output": "PINNED"
+  },
+  {
+    "input": "Saw a dog in the garden",
+    "output": "EPISODIC"
+  },
+  {
+    "input": "Hi",
+    "output": "DISCARD"
+  },
+  {
+    "input": "Search for winner",
+    "output": "TEMPORARY"
+  },
+  {
+    "input": "Emily works at Google",
+    "output": "RELATIONAL"
+  },
+  {
+    "input": "I work as a designer",
+    "output": "PINNED"
+  },
+  {
+    "input": "We saw The Matrix last night",
+    "output": "EPISODIC"
+  },
+  {
+    "input": "Remind me to pay bills at 2pm",
+    "output": "CRITICAL"
+  },
+  {
+    "input": "My boss is Emily",
+    "output": "RELATIONAL"
+  },
+  {
+    "input": "Translate thank you to Spanish",
+    "output": "TEMPORARY"
+  }
+]
