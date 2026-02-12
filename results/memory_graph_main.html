@@ -1,0 +1,259 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 750px;
+                 background-color: #222222;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+             #loadingBar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width: 100%;
+                 height: 750px;
+                 background-color:rgba(200,200,200,0.8);
+                 -webkit-transition: all 0.5s ease;
+                 -moz-transition: all 0.5s ease;
+                 -ms-transition: all 0.5s ease;
+                 -o-transition: all 0.5s ease;
+                 transition: all 0.5s ease;
+                 opacity:1;
+             }
+
+             #bar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width:20px;
+                 height:20px;
+                 margin:auto auto auto auto;
+                 border-radius:11px;
+                 border:2px solid rgba(30,30,30,0.05);
+                 background: rgb(0, 173, 246); /* Old browsers */
+                 box-shadow: 2px 0px 4px rgba(0,0,0,0.4);
+             }
+
+             #border {
+                 position:absolute;
+                 top:10px;
+                 left:10px;
+                 width:500px;
+                 height:23px;
+                 margin:auto auto auto auto;
+                 box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
+                 border-radius:10px;
+             }
+
+             #text {
+                 position:absolute;
+                 top:8px;
+                 left:530px;
+                 width:30px;
+                 height:50px;
+                 margin:auto auto auto auto;
+                 font-size:22px;
+                 color: #000000;
+             }
+
+             div.outerBorder {
+                 position:relative;
+                 top:400px;
+                 width:600px;
+                 height:44px;
+                 margin:auto auto auto auto;
+                 border:8px solid rgba(0,0,0,0.1);
+                 background: rgb(252,252,252); /* Old browsers */
+                 background: -moz-linear-gradient(top,  rgba(252,252,252,1) 0%, rgba(237,237,237,1) 100%); /* FF3.6+ */
+                 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,252,252,1)), color-stop(100%,rgba(237,237,237,1))); /* Chrome,Safari4+ */
+                 background: -webkit-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Chrome10+,Safari5.1+ */
+                 background: -o-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Opera 11.10+ */
+                 background: -ms-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* IE10+ */
+                 background: linear-gradient(to bottom,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* W3C */
+                 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+                 border-radius:72px;
+                 box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+             }
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+            <div id="loadingBar">
+              <div class="outerBorder">
+                <div id="text">0%</div>
+                <div id="border">
+                  <div id="bar"></div>
+                </div>
+              </div>
+            </div>
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#32CD32", "font": {"color": "white"}, "id": "c5d9f2a7-ebe9-4453-80bc-8ed831aa6fe1", "label": "PINNED", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: pinned\nContent: My favorite color is Blue...."}, {"color": "#32CD32", "font": {"color": "white"}, "id": "36b98272-e567-422b-8cad-56471e6a075d", "label": "PINNED", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: pinned\nContent: My favorite color is Blue...."}, {"color": "#32CD32", "font": {"color": "white"}, "id": "afe52cbc-51cf-4fe3-a640-4185b8de4e19", "label": "PINNED", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: pinned\nContent: My favorite color is Blue...."}, {"color": "#32CD32", "font": {"color": "white"}, "id": "440e8660-825d-4e16-9fdb-58319ae501be", "label": "PINNED", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: pinned\nContent: My favorite color is Blue...."}, {"color": "#32CD32", "font": {"color": "white"}, "id": "7db50c11-4cf2-4f53-b105-c6bf0ff1e274", "label": "PINNED", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: pinned\nContent: My absolute favorite unique color is ColorNXDHH...."}, {"color": "#FF4500", "font": {"color": "white"}, "id": "883edae2-0d34-4e71-bd84-3f695948618f", "label": "CRITICAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: critical\nContent: IMPORTANT: The deadline for ProjectDPAPT is 5596 PM...."}, {"color": "#9370DB", "font": {"color": "white"}, "id": "2366074b-2bf0-4d51-ba28-efe22bd17b0c", "label": "RELATIONAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: relational\nContent: EZODG is the secret cousin of EZODGJunior...."}, {"color": "#1E90FF", "font": {"color": "white"}, "id": "6e8e7275-712a-4311-8a56-a4469ccaa785", "label": "EPISODIC", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: episodic\nContent: Yesterday I went to the PZKWTRestaurant and ate PZKWTBurger...."}, {"color": "#808080", "font": {"color": "white"}, "id": "4bc4dd07-426c-4a10-a4b8-b4c2608b518a", "label": "TEMPORARY", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: temporary\nContent: Remind me to call OMOVYSupervisor in 5 minutes...."}, {"color": "#32CD32", "font": {"color": "white"}, "id": "94aad6d3-c6fc-4fa1-b3eb-d49779638e94", "label": "PINNED", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: pinned\nContent: My absolute favorite unique color is ColorUCMOP...."}, {"color": "#FF4500", "font": {"color": "white"}, "id": "0189af62-d655-4acb-86c8-cdce9f06f1a9", "label": "CRITICAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: critical\nContent: IMPORTANT: The deadline for ProjectWNIEA is 6343 PM...."}, {"color": "#9370DB", "font": {"color": "white"}, "id": "b22c6841-d1ba-4862-b2cc-3965b3e100cc", "label": "RELATIONAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: relational\nContent: XMVHS is the secret cousin of XMVHSJunior...."}, {"color": "#1E90FF", "font": {"color": "white"}, "id": "d4dc8b26-40da-4a02-b0ce-d30c738b3b89", "label": "EPISODIC", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: episodic\nContent: Yesterday I went to the ZPEZBRestaurant and ate ZPEZBBurger...."}, {"color": "#808080", "font": {"color": "white"}, "id": "6dc01591-8652-431a-b486-b7749a4fcf1f", "label": "TEMPORARY", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: temporary\nContent: Remind me to call WTRQHSupervisor in 5 minutes...."}, {"color": "#32CD32", "font": {"color": "white"}, "id": "ddce3fc9-3903-42a0-8cb1-908c64b889b2", "label": "PINNED", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: pinned\nContent: My absolute favorite unique color is ColorJJCLZ...."}, {"color": "#FF4500", "font": {"color": "white"}, "id": "af387f0a-b1b9-4403-9b6c-d86871a069dd", "label": "CRITICAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: critical\nContent: IMPORTANT: The deadline for ProjectHMXIF is 5146 PM...."}, {"color": "#9370DB", "font": {"color": "white"}, "id": "5d9cbc88-fb86-46ec-9a18-3d9d0f60b4f5", "label": "RELATIONAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: relational\nContent: KCYDK is the secret cousin of KCYDKJunior...."}, {"color": "#1E90FF", "font": {"color": "white"}, "id": "047100a3-f17f-47ac-83a7-67b4d6a06d6c", "label": "EPISODIC", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: episodic\nContent: Yesterday I went to the PBVFERestaurant and ate PBVFEBurger...."}, {"color": "#808080", "font": {"color": "white"}, "id": "92189371-5fe8-457d-a8ef-122e932184bd", "label": "TEMPORARY", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: temporary\nContent: Remind me to call UWPZXSupervisor in 5 minutes...."}, {"color": "#32CD32", "font": {"color": "white"}, "id": "c17e3f68-82e0-4a63-9f08-965bd3978db8", "label": "PINNED", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: pinned\nContent: My absolute favorite unique color is ColorLLOUX...."}, {"color": "#FF4500", "font": {"color": "white"}, "id": "984a8276-899a-42a2-8e3b-f19e161e4cd5", "label": "CRITICAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: critical\nContent: IMPORTANT: The deadline for ProjectOTRRO is 3716 PM...."}, {"color": "#9370DB", "font": {"color": "white"}, "id": "5bd963f9-1f50-4600-ab6a-e801767fdfc3", "label": "RELATIONAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: relational\nContent: LKRLS is the secret cousin of LKRLSJunior...."}, {"color": "#1E90FF", "font": {"color": "white"}, "id": "d52f064f-7d2f-49a8-9a99-44bfc33ac2d1", "label": "EPISODIC", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: episodic\nContent: Yesterday I went to the BJTRIRestaurant and ate BJTRIBurger...."}, {"color": "#808080", "font": {"color": "white"}, "id": "ef392d2a-fc35-4fa9-80e6-3e75e4ddb261", "label": "TEMPORARY", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: temporary\nContent: Remind me to call QTVUVSupervisor in 5 minutes...."}, {"color": "#32CD32", "font": {"color": "white"}, "id": "f552392c-4e5e-4474-bcb0-852ce736beb4", "label": "PINNED", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: pinned\nContent: My absolute favorite unique color is ColorOGATA...."}, {"color": "#FF4500", "font": {"color": "white"}, "id": "1ff91ac4-1e89-4cf5-8038-be5a05053412", "label": "CRITICAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: critical\nContent: IMPORTANT: The deadline for ProjectBAHOT is 9820 PM...."}, {"color": "#9370DB", "font": {"color": "white"}, "id": "db2c0a61-44c3-4870-84e3-d8b58cdf2928", "label": "RELATIONAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: relational\nContent: HBXLK is the secret cousin of HBXLKJunior...."}, {"color": "#1E90FF", "font": {"color": "white"}, "id": "9b7f716e-15cc-4e27-85ad-6e76cf18dce0", "label": "EPISODIC", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: episodic\nContent: Yesterday I went to the MQIZRRestaurant and ate MQIZRBurger...."}, {"color": "#808080", "font": {"color": "white"}, "id": "0349a8eb-0709-43d0-8ff1-1c16ee6de320", "label": "TEMPORARY", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: temporary\nContent: Remind me to call LKUZRSupervisor in 5 minutes...."}, {"color": "#32CD32", "font": {"color": "white"}, "id": "6eebe074-1061-41f1-acf7-48426a4d3ade", "label": "PINNED", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: pinned\nContent: My absolute favorite unique color is ColorSZSFM...."}, {"color": "#FF4500", "font": {"color": "white"}, "id": "18a75fa4-d98c-4966-b752-4b3d90f95a7d", "label": "CRITICAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: critical\nContent: IMPORTANT: The deadline for ProjectVYYZA is 5672 PM...."}, {"color": "#9370DB", "font": {"color": "white"}, "id": "8ee5f37c-ab6a-4572-b1ae-f077490dcbcb", "label": "RELATIONAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: relational\nContent: NFRGT is the secret cousin of NFRGTJunior...."}, {"color": "#1E90FF", "font": {"color": "white"}, "id": "43c83ee9-097f-4ac8-ae63-071597bf8dfe", "label": "EPISODIC", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: episodic\nContent: Yesterday I went to the HWDUERestaurant and ate HWDUEBurger...."}, {"color": "#808080", "font": {"color": "white"}, "id": "e67ca75b-15e5-432d-99c0-92082394cf64", "label": "TEMPORARY", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: temporary\nContent: Remind me to call MQKPBSupervisor in 5 minutes...."}, {"color": "#32CD32", "font": {"color": "white"}, "id": "9b93e00e-682f-42a3-aa50-d2e9468041d6", "label": "PINNED", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: pinned\nContent: My absolute favorite unique color is ColorMBOQL...."}, {"color": "#FF4500", "font": {"color": "white"}, "id": "372b1f5f-135d-4382-a960-980ff0be3257", "label": "CRITICAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: critical\nContent: IMPORTANT: The deadline for ProjectAFBQC is 4243 PM...."}, {"color": "#9370DB", "font": {"color": "white"}, "id": "994e371e-85d5-465b-939e-f1ef89763e8b", "label": "RELATIONAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: relational\nContent: ZJFDX is the secret cousin of ZJFDXJunior...."}, {"color": "#1E90FF", "font": {"color": "white"}, "id": "1301d1f9-1a2e-4941-8c6f-69131f596f43", "label": "EPISODIC", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: episodic\nContent: Yesterday I went to the PDIQKRestaurant and ate PDIQKBurger...."}, {"color": "#808080", "font": {"color": "white"}, "id": "3efa954b-ac2c-4586-92ea-5cd7f4cf37f2", "label": "TEMPORARY", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: temporary\nContent: Remind me to call JTZAISupervisor in 5 minutes...."}, {"color": "#32CD32", "font": {"color": "white"}, "id": "93351334-09c4-42ac-8938-84a765d0550b", "label": "PINNED", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: pinned\nContent: My absolute favorite unique color is ColorXYISY...."}, {"color": "#FF4500", "font": {"color": "white"}, "id": "e45f9d3d-66cf-4faa-afe3-b57a80f35710", "label": "CRITICAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: critical\nContent: IMPORTANT: The deadline for ProjectQXZSR is 2321 PM...."}, {"color": "#9370DB", "font": {"color": "white"}, "id": "97a32c40-92cf-4dfa-ab08-5fe3c3d31cdb", "label": "RELATIONAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: relational\nContent: VVCEV is the secret cousin of VVCEVJunior...."}, {"color": "#1E90FF", "font": {"color": "white"}, "id": "c0b0a742-6d6e-475f-816c-cd74f54e49b9", "label": "EPISODIC", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: episodic\nContent: Yesterday I went to the BHOGPRestaurant and ate BHOGPBurger...."}, {"color": "#1E90FF", "font": {"color": "white"}, "id": "be184bcd-5258-45a1-9cdc-36eddc74966c", "label": "EPISODIC", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: episodic\nContent: Yesterday I went to the CYVODRestaurant and ate CYVODBurger...."}, {"color": "#FF4500", "font": {"color": "white"}, "id": "52734f5d-d905-4fb7-87e8-d94747a5a957", "label": "CRITICAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: critical\nContent: IMPORTANT: The deadline for ProjectZOMGX is 5510 PM...."}, {"color": "#9370DB", "font": {"color": "white"}, "id": "daccc117-6fba-4a7d-a1bd-2235a66c1015", "label": "RELATIONAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: relational\nContent: TEMEE is the secret cousin of TEMEEJunior...."}, {"color": "#A9A9A9", "font": {"color": "white"}, "id": "3c15c570-79fd-4369-bffa-c930d00feb0e", "label": "DISCARD", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: discard\nContent: PNIGN is the secret cousin of PNIGNJunior...."}, {"color": "#9370DB", "font": {"color": "white"}, "id": "a1e05e3b-be46-42d3-a67c-e5d746893cd7", "label": "RELATIONAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: relational\nContent: NLHTF is the secret cousin of NLHTFJunior...."}, {"color": "#9370DB", "font": {"color": "white"}, "id": "85c658a7-6ba0-4b56-98e7-e5701c90c077", "label": "RELATIONAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: relational\nContent: XJFLS is the secret cousin of XJFLSJunior...."}, {"color": "#1E90FF", "font": {"color": "white"}, "id": "66ac68ff-3cb1-4ee4-b7bd-eb6fbc9a6530", "label": "EPISODIC", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: episodic\nContent: Yesterday I went to the TGYIXRestaurant and ate TGYIXBurger...."}, {"color": "#FF4500", "font": {"color": "white"}, "id": "220dbbc6-68f5-49a4-ada4-4eb406ac278a", "label": "CRITICAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: critical\nContent: IMPORTANT: The deadline for ProjectKBEOD is 2721 PM...."}, {"color": "#9370DB", "font": {"color": "white"}, "id": "2eec24fe-c098-4536-bfc6-5d960445d386", "label": "RELATIONAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: relational\nContent: HXTUN is the secret cousin of HXTUNJunior...."}, {"color": "#FF4500", "font": {"color": "white"}, "id": "978b4c19-0c56-4718-b49f-9a1e33899866", "label": "CRITICAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: critical\nContent: The deadline for ProjectAlpha6089 is 1 PM...."}, {"color": "#808080", "font": {"color": "white"}, "id": "87b45b5e-d5e4-4080-bfa2-907ad9840474", "label": "TEMPORARY", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: temporary\nContent: UPDATE: The deadline for ProjectAlpha5121 changed to 11 PM...."}, {"color": "#FF4500", "font": {"color": "white"}, "id": "74779537-c580-4503-9d6c-52cf6eca3641", "label": "CRITICAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: critical\nContent: The deadline for ProjectAlpha8573 is 5 PM...."}, {"color": "#FF4500", "font": {"color": "white"}, "id": "85889a4b-34bc-47fc-a483-9dc485bcb62d", "label": "CRITICAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: critical\nContent: UPDATE: The deadline for ProjectAlpha1890 changed to 7 PM...."}, {"color": "#FF4500", "font": {"color": "white"}, "id": "31f7e715-61f6-45d0-8633-ac426ac5bb2d", "label": "CRITICAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: critical\nContent: IMPORTANT: The deadline for ProjectETSTX is 8839 PM...."}, {"color": "#32CD32", "font": {"color": "white"}, "id": "382e0dda-ae02-4a44-8afb-5422db110cc2", "label": "PINNED", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: pinned\nContent: My absolute favorite unique color is ColorZRAOV...."}, {"color": "#FF4500", "font": {"color": "white"}, "id": "100ae9bb-55d0-49fa-b7ff-703ce42da371", "label": "CRITICAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: critical\nContent: The deadline for ProjectAlpha7857 is 2 PM...."}, {"color": "#9370DB", "font": {"color": "white"}, "id": "59c4d12f-18e2-4af7-8195-9a4ff383b79f", "label": "RELATIONAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: relational\nContent: CHKSJ is the secret cousin of CHKSJJunior...."}, {"color": "#FF4500", "font": {"color": "white"}, "id": "0f615185-2a30-4f22-8c6a-018e2b45c510", "label": "CRITICAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: critical\nContent: UPDATE: The deadline for ProjectAlpha6515 changed to 10 PM...."}, {"color": "#9370DB", "font": {"color": "white"}, "id": "44272875-3df9-45b0-837c-3164b0a90fe5", "label": "RELATIONAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: relational\nContent: CGHLE is the secret cousin of CGHLEJunior...."}, {"color": "#A9A9A9", "font": {"color": "white"}, "id": "18d3f1f3-cccc-46e3-b1bb-97def7f9dda0", "label": "DISCARD", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: discard\nContent: The deadline for ProjectAlpha3560 is 4 PM...."}, {"color": "#808080", "font": {"color": "white"}, "id": "769251fd-e47c-4004-b1c9-4763f59ae532", "label": "TEMPORARY", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: temporary\nContent: Remind me to call GQZKMSupervisor in 5 minutes...."}, {"color": "#808080", "font": {"color": "white"}, "id": "fb308550-eb5b-4c61-a228-f22c131790b6", "label": "TEMPORARY", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: temporary\nContent: UPDATE: The deadline for ProjectAlpha1442 changed to 7 PM...."}, {"color": "#32CD32", "font": {"color": "white"}, "id": "a84fdb25-b35c-460f-a4e4-e95c8fa041b3", "label": "PINNED", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: pinned\nContent: IMPORTANT: The deadline for ProjectILVBV is 1000 PM...."}, {"color": "#9370DB", "font": {"color": "white"}, "id": "2ce0a4a5-ce30-4cdb-9535-2c9115d0287b", "label": "RELATIONAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: relational\nContent: VOEBJ is the secret cousin of VOEBJJunior...."}, {"color": "#A9A9A9", "font": {"color": "white"}, "id": "2b816080-55f9-448e-be5d-f49b60839517", "label": "DISCARD", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: discard\nContent: The deadline for ProjectAlpha1477 is 5 PM...."}, {"color": "#808080", "font": {"color": "white"}, "id": "12b9046b-7d10-44d1-996f-6a58e1ce7d1d", "label": "TEMPORARY", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: temporary\nContent: UPDATE: The deadline for ProjectAlpha4850 changed to 10 PM...."}, {"color": "#9370DB", "font": {"color": "white"}, "id": "947f9e35-b66c-40d7-b7a1-e77349df7547", "label": "RELATIONAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: relational\nContent: VLOFO is the secret cousin of VLOFOJunior...."}, {"color": "#1E90FF", "font": {"color": "white"}, "id": "28d7ef2f-ea4b-49dd-acf0-1b22de6376f5", "label": "EPISODIC", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: episodic\nContent: Yesterday I went to the MBGMJRestaurant and ate MBGMJBurger...."}, {"color": "#FF4500", "font": {"color": "white"}, "id": "df746f49-efe9-449c-af86-3417272f83ad", "label": "CRITICAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: critical\nContent: UPDATE: The deadline for ProjectAlpha7814 changed to 10 PM...."}, {"color": "#FF4500", "font": {"color": "white"}, "id": "e2f8f1bd-a6ca-43fb-91cd-5e5fdfb75936", "label": "CRITICAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: critical\nContent: IMPORTANT: The deadline for ProjectARYME is 2231 PM...."}, {"color": "#9370DB", "font": {"color": "white"}, "id": "5d164083-fc4d-4940-9e47-268791d55f7c", "label": "RELATIONAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: relational\nContent: TRLVP is the secret cousin of TRLVPJunior...."}, {"color": "#FF4500", "font": {"color": "white"}, "id": "626d98ac-dcae-4099-9cf6-af7daf6b169c", "label": "CRITICAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: critical\nContent: IMPORTANT: The deadline for ProjectOWJUF is 8253 PM...."}, {"color": "#9370DB", "font": {"color": "white"}, "id": "60fadc50-3270-452c-b913-6d3382db105e", "label": "RELATIONAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: relational\nContent: XYNTN is the secret cousin of XYNTNJunior...."}, {"color": "#808080", "font": {"color": "white"}, "id": "0c74e55a-295b-4d6b-8f25-94079e593418", "label": "TEMPORARY", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: temporary\nContent: UPDATE: The deadline for ProjectAlpha8433 changed to 9 PM...."}, {"color": "#9370DB", "font": {"color": "white"}, "id": "c0d65fa6-df1f-493e-9a9c-730e18b128dc", "label": "RELATIONAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: relational\nContent: CWCLY is the secret cousin of CWCLYJunior...."}, {"color": "#808080", "font": {"color": "white"}, "id": "a8567e8d-c258-4cea-afb2-5d997ce93fad", "label": "TEMPORARY", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: temporary\nContent: Remind me to call CGPMYSupervisor in 5 minutes...."}, {"color": "#1E90FF", "font": {"color": "white"}, "id": "0536ed3b-42d7-4d01-8814-4925ee88f08f", "label": "EPISODIC", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: episodic\nContent: Yesterday I went to the WSNYYRestaurant and ate WSNYYBurger...."}, {"color": "#9370DB", "font": {"color": "white"}, "id": "cf36eb43-ed31-44c2-9f26-a0dcbda407aa", "label": "RELATIONAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: relational\nContent: FNUBQ is the secret cousin of FNUBQJunior...."}, {"color": "#FF4500", "font": {"color": "white"}, "id": "bacc622c-1be1-4738-ae48-c009be3ad5f0", "label": "CRITICAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: critical\nContent: The deadline for ProjectAlpha5121 is 3 PM...."}, {"color": "#FF4500", "font": {"color": "white"}, "id": "d27b84db-91c3-4fed-89c9-614254ff8313", "label": "CRITICAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: critical\nContent: UPDATE: The deadline for ProjectAlpha3374 changed to 6 PM...."}, {"color": "#FF4500", "font": {"color": "white"}, "id": "c7bfe8a2-b814-4bc9-ac77-491dcfa48a4e", "label": "CRITICAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: critical\nContent: UPDATE: The deadline for ProjectAlpha8528 changed to 7 PM...."}, {"color": "#808080", "font": {"color": "white"}, "id": "f28a2ad8-a9a3-4d2e-800b-b27fef1b5ed4", "label": "TEMPORARY", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: temporary\nContent: Remind me to call GCAUWSupervisor in 5 minutes...."}, {"color": "#9370DB", "font": {"color": "white"}, "id": "e1ecf778-a220-4580-b370-b75a5a86dd9a", "label": "RELATIONAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: relational\nContent: NPLFU is the secret cousin of NPLFUJunior...."}, {"color": "#FF4500", "font": {"color": "white"}, "id": "0b0d7bf6-73a3-4e5e-b309-31761d6fe395", "label": "CRITICAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: critical\nContent: UPDATE: The deadline for ProjectAlpha7857 changed to 8 PM...."}, {"color": "#9370DB", "font": {"color": "white"}, "id": "c0365e39-25cd-48e7-9063-c41669636771", "label": "RELATIONAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: relational\nContent: WAZRX is the secret cousin of WAZRXJunior...."}, {"color": "#FF4500", "font": {"color": "white"}, "id": "1a08f1bc-d272-4478-a135-f7314247f461", "label": "CRITICAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: critical\nContent: IMPORTANT: The deadline for ProjectHLEBA is 6632 PM...."}, {"color": "#1E90FF", "font": {"color": "white"}, "id": "7bda81df-96fd-4fac-ae8b-c1d576e1be35", "label": "EPISODIC", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: episodic\nContent: Yesterday I went to the OJJAURestaurant and ate OJJAUBurger...."}, {"color": "#9370DB", "font": {"color": "white"}, "id": "a40a5054-ee26-4f6d-9893-5978bbe939a8", "label": "RELATIONAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: relational\nContent: HKNFJ is the secret cousin of HKNFJJunior...."}, {"color": "#9370DB", "font": {"color": "white"}, "id": "78a89654-c75a-48fe-a17d-a445f2523e87", "label": "RELATIONAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: relational\nContent: GSNAP is the secret cousin of GSNAPJunior...."}, {"color": "#FF4500", "font": {"color": "white"}, "id": "0fb5c239-e057-43ca-b3ac-474a39f63b97", "label": "CRITICAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: critical\nContent: The deadline for ProjectAlpha2527 is 4 PM...."}, {"color": "#FF4500", "font": {"color": "white"}, "id": "a1bd2b35-3a3a-480d-84a7-57bcb0043698", "label": "CRITICAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: critical\nContent: IMPORTANT: The deadline for ProjectCKPJV is 7527 PM...."}, {"color": "#FF4500", "font": {"color": "white"}, "id": "1d700bbf-8dad-42c1-b6da-8ffb91a2345b", "label": "CRITICAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: critical\nContent: UPDATE: The deadline for ProjectAlpha1801 changed to 10 PM...."}, {"color": "#1E90FF", "font": {"color": "white"}, "id": "d290c864-89d8-41ca-a068-1a905a76cb72", "label": "EPISODIC", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: episodic\nContent: Yesterday I went to the KYAXARestaurant and ate KYAXABurger...."}, {"color": "#9370DB", "font": {"color": "white"}, "id": "89c1e260-4ab7-40bd-b136-41c87a91b37b", "label": "RELATIONAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: relational\nContent: BCLOJ is the secret cousin of BCLOJJunior...."}, {"color": "#808080", "font": {"color": "white"}, "id": "a2ca286f-7585-4ea9-a451-dc08870e88b7", "label": "TEMPORARY", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: temporary\nContent: UPDATE: The deadline for ProjectAlpha9882 changed to 10 PM...."}, {"color": "#9370DB", "font": {"color": "white"}, "id": "4df416d9-5936-424f-b200-f592fd06a60c", "label": "RELATIONAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: relational\nContent: EFCUN is the secret cousin of EFCUNJunior...."}, {"color": "#9370DB", "font": {"color": "white"}, "id": "395d0757-9080-46ee-8c9e-112bbfda5bee", "label": "RELATIONAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: relational\nContent: TZQLM is the secret cousin of TZQLMJunior...."}, {"color": "#808080", "font": {"color": "white"}, "id": "c4827f08-15a7-476a-9b94-3d2e333c5fe4", "label": "TEMPORARY", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: temporary\nContent: UPDATE: The deadline for ProjectAlpha0756 changed to 8 PM...."}, {"color": "#FF4500", "font": {"color": "white"}, "id": "010323d2-30df-4385-806e-14e1ff6c111d", "label": "CRITICAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: critical\nContent: IMPORTANT: The deadline for ProjectAGTYJ is 1436 PM...."}, {"color": "#FF4500", "font": {"color": "white"}, "id": "6bbb22a3-a849-4ebe-bed8-0f6666e8f6f0", "label": "CRITICAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: critical\nContent: The deadline for ProjectAlpha1585 is 4 PM...."}, {"color": "#A9A9A9", "font": {"color": "white"}, "id": "6cc8c965-b079-4fea-b710-2c4a4e9b0ce0", "label": "DISCARD", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: discard\nContent: The deadline for ProjectAlpha9882 is 4 PM...."}, {"color": "#808080", "font": {"color": "white"}, "id": "c7596d5c-293a-486b-a1b6-924e19f02456", "label": "TEMPORARY", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: temporary\nContent: UPDATE: The deadline for ProjectAlpha0141 changed to 8 PM...."}, {"color": "#9370DB", "font": {"color": "white"}, "id": "9f4bdc07-5b6b-4400-82ce-a419a181c860", "label": "RELATIONAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: relational\nContent: TZXMH is the secret cousin of TZXMHJunior...."}, {"color": "#9370DB", "font": {"color": "white"}, "id": "8245aa3d-6f4b-4668-80d3-6b3a1b965909", "label": "RELATIONAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: relational\nContent: XOQPD is the secret cousin of XOQPDJunior...."}, {"color": "#9370DB", "font": {"color": "white"}, "id": "dba84745-1ba8-4639-a2ec-d837c447f025", "label": "RELATIONAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: relational\nContent: QAEWI is the secret cousin of QAEWIJunior...."}, {"color": "#FF4500", "font": {"color": "white"}, "id": "a7d8b52b-4027-4164-815b-bac7e908ec96", "label": "CRITICAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: critical\nContent: IMPORTANT: The deadline for ProjectYDWQM is 3367 PM...."}, {"color": "#A9A9A9", "font": {"color": "white"}, "id": "2f924728-0281-4b53-a6b8-9cdee7c1a44e", "label": "DISCARD", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: discard\nContent: The deadline for ProjectAlpha4850 is 4 PM...."}, {"color": "#808080", "font": {"color": "white"}, "id": "1ab5c0b0-3d77-4cf4-801a-94601b158986", "label": "TEMPORARY", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: temporary\nContent: UPDATE: The deadline for ProjectAlpha1617 changed to 9 PM...."}, {"color": "#9370DB", "font": {"color": "white"}, "id": "5904e842-1e60-46d6-b72a-81801a66437a", "label": "RELATIONAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: relational\nContent: DDAGF is the secret cousin of DDAGFJunior...."}, {"color": "#A9A9A9", "font": {"color": "white"}, "id": "65f69a78-5aa2-4918-81b3-50dfa9eee516", "label": "DISCARD", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: discard\nContent: The deadline for ProjectAlpha1442 is 1 PM...."}, {"color": "#32CD32", "font": {"color": "white"}, "id": "9f06a7da-4d33-411d-acd7-8415c90a20b5", "label": "PINNED", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: pinned\nContent: My absolute favorite unique color is ColorETBDX...."}, {"color": "#9370DB", "font": {"color": "white"}, "id": "d85e9017-61b0-4820-8f22-c0ca1dca0353", "label": "RELATIONAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: relational\nContent: CHSWN is the secret cousin of CHSWNJunior...."}, {"color": "#9370DB", "font": {"color": "white"}, "id": "937111c0-d147-4996-b186-2aa6296432cc", "label": "RELATIONAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: relational\nContent: CXMKW is the secret cousin of CXMKWJunior...."}, {"color": "#FF4500", "font": {"color": "white"}, "id": "b921b499-e804-4119-b116-1e2843090ed4", "label": "CRITICAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: critical\nContent: IMPORTANT: The deadline for ProjectJUMKL is 2989 PM...."}, {"color": "#FF4500", "font": {"color": "white"}, "id": "9a3c1e7e-6ed8-49ab-a871-9aa7cfe3924d", "label": "CRITICAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: critical\nContent: IMPORTANT: The deadline for ProjectITPDF is 1851 PM...."}, {"color": "#1E90FF", "font": {"color": "white"}, "id": "a6b3fda5-1522-4775-ae3c-c57b05a821cb", "label": "EPISODIC", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: episodic\nContent: Yesterday I went to the AVMCSRestaurant and ate AVMCSBurger...."}, {"color": "#FF4500", "font": {"color": "white"}, "id": "4e0f4c08-537d-4990-b3f5-e629e070bcfa", "label": "CRITICAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: critical\nContent: The deadline for ProjectAlpha2244 is 1 PM...."}, {"color": "#FF4500", "font": {"color": "white"}, "id": "b635d339-108c-4b8c-a58f-8930d795ad3a", "label": "CRITICAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: critical\nContent: IMPORTANT: The deadline for ProjectZIWDU is 7733 PM...."}, {"color": "#FF4500", "font": {"color": "white"}, "id": "475e13b1-43b9-471b-90a2-cac21dd5f4f6", "label": "CRITICAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: critical\nContent: UPDATE: The deadline for ProjectAlpha0188 changed to 11 PM...."}, {"color": "#FF4500", "font": {"color": "white"}, "id": "cf819031-2f21-4482-ac3c-b33dd364a9de", "label": "CRITICAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: critical\nContent: IMPORTANT: The deadline for ProjectJHXKK is 3216 PM...."}, {"color": "#FF4500", "font": {"color": "white"}, "id": "57480ca3-56cd-43d9-a9a3-12536b8d2625", "label": "CRITICAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: critical\nContent: IMPORTANT: The deadline for ProjectBLMZF is 8513 PM...."}, {"color": "#FF4500", "font": {"color": "white"}, "id": "f2633035-5da1-4099-820f-497e2a037c43", "label": "CRITICAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: critical\nContent: The deadline for ProjectAlpha1339 is 4 PM...."}, {"color": "#808080", "font": {"color": "white"}, "id": "60bb9916-5fa1-43c0-a281-cb316ccaa744", "label": "TEMPORARY", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: temporary\nContent: UPDATE: The deadline for ProjectAlpha3560 changed to 11 PM...."}, {"color": "#FF4500", "font": {"color": "white"}, "id": "a8f8f560-cc5d-44be-ae19-db504a500854", "label": "CRITICAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: critical\nContent: IMPORTANT: The deadline for ProjectFMSXL is 1817 PM...."}, {"color": "#A9A9A9", "font": {"color": "white"}, "id": "372219f9-839c-4bd7-9fa6-ddd29e4a14b8", "label": "DISCARD", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: discard\nContent: The deadline for ProjectAlpha0619 is 5 PM...."}, {"color": "#808080", "font": {"color": "white"}, "id": "2bafc4bb-db2b-4c5d-b55c-ed02cf9b5448", "label": "TEMPORARY", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: temporary\nContent: UPDATE: The deadline for ProjectAlpha1585 changed to 6 PM...."}, {"color": "#FF4500", "font": {"color": "white"}, "id": "9dbedf14-471d-4301-ab29-31bd82d90554", "label": "CRITICAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: critical\nContent: IMPORTANT: The deadline for ProjectCBTBX is 0233 PM...."}, {"color": "#A9A9A9", "font": {"color": "white"}, "id": "72c52fcb-77cd-40fd-b49a-259d10d95fdd", "label": "DISCARD", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: discard\nContent: The deadline for ProjectAlpha6632 is 4 PM...."}, {"color": "#808080", "font": {"color": "white"}, "id": "94ba1212-ba11-4f9e-8e00-0d02934b9613", "label": "TEMPORARY", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: temporary\nContent: UPDATE: The deadline for ProjectAlpha8573 changed to 8 PM...."}, {"color": "#A9A9A9", "font": {"color": "white"}, "id": "69722a5d-826b-4fcc-b1ee-a346b31c45c5", "label": "DISCARD", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: discard\nContent: The deadline for ProjectAlpha8530 is 1 PM...."}, {"color": "#808080", "font": {"color": "white"}, "id": "bf8fd1d8-74aa-4283-b377-2826c9688976", "label": "TEMPORARY", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: temporary\nContent: UPDATE: The deadline for ProjectAlpha8530 changed to 8 PM...."}, {"color": "#9370DB", "font": {"color": "white"}, "id": "82ae8360-4117-405e-9ac0-c316dafb32e0", "label": "RELATIONAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: relational\nContent: AKYOK is the secret cousin of AKYOKJunior...."}, {"color": "#1E90FF", "font": {"color": "white"}, "id": "ef4a7a3f-154c-47fc-9d9b-7d784b5b886b", "label": "EPISODIC", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: episodic\nContent: Yesterday I went to the RUCNFRestaurant and ate RUCNFBurger...."}, {"color": "#FF4500", "font": {"color": "white"}, "id": "ac93ebf2-9e72-4ed1-a638-cdcbf11f5d69", "label": "CRITICAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: critical\nContent: The deadline for ProjectAlpha2692 is 5 PM...."}, {"color": "#808080", "font": {"color": "white"}, "id": "b48774e7-2ff0-49fc-8677-4895a257967c", "label": "TEMPORARY", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: temporary\nContent: UPDATE: The deadline for ProjectAlpha7948 changed to 11 PM...."}, {"color": "#A9A9A9", "font": {"color": "white"}, "id": "e38780ff-0e2f-4020-83c4-9aa7a811916b", "label": "DISCARD", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: discard\nContent: The deadline for ProjectAlpha1617 is 1 PM...."}, {"color": "#FF4500", "font": {"color": "white"}, "id": "076d832e-d56c-4acb-9416-1a337ceb6d13", "label": "CRITICAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: critical\nContent: IMPORTANT: The deadline for ProjectWLATJ is 9140 PM...."}, {"color": "#9370DB", "font": {"color": "white"}, "id": "72eb1b75-a238-4a8b-abb8-e0cb688804b0", "label": "RELATIONAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: relational\nContent: ZABLX is the secret cousin of ZABLXJunior...."}, {"color": "#FF4500", "font": {"color": "white"}, "id": "f43f3ab3-ed58-46a9-b4d7-ff8f69d28d29", "label": "CRITICAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: critical\nContent: The deadline for ProjectAlpha8433 is 1 PM...."}, {"color": "#808080", "font": {"color": "white"}, "id": "771de8ac-1b6f-4b0d-9644-40c2e4d502e8", "label": "TEMPORARY", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: temporary\nContent: UPDATE: The deadline for ProjectAlpha2692 changed to 6 PM...."}, {"color": "#FF4500", "font": {"color": "white"}, "id": "317b0a47-76bf-4954-bdf4-c4f9cde5e1c4", "label": "CRITICAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: critical\nContent: IMPORTANT: The deadline for ProjectMKVAB is 1747 PM...."}, {"color": "#9370DB", "font": {"color": "white"}, "id": "24089c5e-9810-47ad-a5ec-6dabfa6799db", "label": "RELATIONAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: relational\nContent: NLZYX is the secret cousin of NLZYXJunior...."}, {"color": "#FF4500", "font": {"color": "white"}, "id": "0bd3b1f3-d96c-4e4a-ad79-e58d92caec6f", "label": "CRITICAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: critical\nContent: IMPORTANT: The deadline for ProjectDXAVG is 8749 PM...."}, {"color": "#A9A9A9", "font": {"color": "white"}, "id": "2a7cade9-766a-4996-a4d6-94a82b6addd7", "label": "DISCARD", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: discard\nContent: The deadline for ProjectAlpha4919 is 4 PM...."}, {"color": "#808080", "font": {"color": "white"}, "id": "b4ed2e23-e73d-4ce9-a9eb-8d7f8590ae46", "label": "TEMPORARY", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: temporary\nContent: UPDATE: The deadline for ProjectAlpha4919 changed to 7 PM...."}, {"color": "#FF4500", "font": {"color": "white"}, "id": "41c6a4c6-8d1c-442e-806e-f858c653ec9f", "label": "CRITICAL", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: critical\nContent: The deadline for ProjectAlpha2904 is 4 PM...."}, {"color": "#808080", "font": {"color": "white"}, "id": "aaca0b79-aa84-41c1-929c-19bbe60a26d7", "label": "TEMPORARY", "shape": "dot", "size": 20, "title": "Type: Memory\nCategory: temporary\nContent: UPDATE: The deadline for ProjectAlpha2904 changed to 7 PM...."}]);
+                  edges = new vis.DataSet([]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "forceAtlas2Based": {
+            "avoidOverlap": 0,
+            "centralGravity": 0.01,
+            "damping": 0.4,
+            "gravitationalConstant": -50,
+            "springConstant": 0.08,
+            "springLength": 100
+        },
+        "solver": "forceAtlas2Based",
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+                      network.on("stabilizationProgress", function(params) {
+                          document.getElementById('loadingBar').removeAttribute("style");
+                          var maxWidth = 496;
+                          var minWidth = 20;
+                          var widthFactor = params.iterations/params.total;
+                          var width = Math.max(minWidth,maxWidth * widthFactor);
+                          document.getElementById('bar').style.width = width + 'px';
+                          document.getElementById('text').innerHTML = Math.round(widthFactor*100) + '%';
+                      });
+                      network.once("stabilizationIterationsDone", function() {
+                          document.getElementById('text').innerHTML = '100%';
+                          document.getElementById('bar').style.width = '496px';
+                          document.getElementById('loadingBar').style.opacity = 0;
+                          // really clean the dom element
+                          setTimeout(function () {document.getElementById('loadingBar').style.display = 'none';}, 500);
+                      });
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>
