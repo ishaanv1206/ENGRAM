@@ -4,7 +4,7 @@
 
 ---
 
-## 🎬 1. Running the Demo
+## 1. Running the Demo
 
 ### Quick Demo (No Models Required)
 
