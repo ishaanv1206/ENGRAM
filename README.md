@@ -74,7 +74,7 @@ The "Voice."
 
 ### 1. **Biology-Inspired "Use-It-or-Lose-It" Decay**
 Most RAG systems are static dumps. Ours is **alive**.
-- we implemented a mathematical decay formula ($N(t) = N_0 e^{-\lambda t}$) where memories fade over time unless reinforced.
+- we implemented a mathematical decay formula where memories fade over time unless reinforced.
 - **Novelty:** This solves the "context clutter" problem by naturally pruning irrelevant data while keeping core facts (like your name) forever.
 
 ### 2. **Hybrid "Tri-Brid" Retrieval**
